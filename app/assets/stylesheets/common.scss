@@ -12,6 +12,10 @@ a {
   color: #000;
 }
 
+.d-none {
+  display: none;
+}
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -55,8 +59,27 @@ a {
       font-size: 14px;
     }
     
+    i {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-size: 18px;
+    }
+    
     &-left-nav {
       float: left;
+      
+      form {
+        display: inline-block;
+      }
+      
+      .form-control {
+        width: 180px;
+        display: inline-block;
+        position: relative;
+        border-radius: 2px;
+        padding-left: 30px;
+      }
     }
     
     &-right-nav {
@@ -79,6 +102,10 @@ a {
         padding: 3px 5px;
       }
     }
+    
+    &-search {
+      position: relatve;
+    }
 }
 
 .host-icon {
@@ -86,6 +113,10 @@ a {
   height: 65px;
   object-fit: cover;
   border-radius: 50px;
+}
+
+.fa-map-marker-alt::before {
+    content: "\f3c5";
 }
 
 .user {

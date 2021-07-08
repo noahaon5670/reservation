@@ -5,7 +5,11 @@ class RoomsController < ApplicationController
   end
   
   def search
-    @rooms = Room.all
+    # @rooms = Room.all
+    
+    @area = params["area"]
+    @keyword = params["keyword"]
+    @rooms = search_for(@area, @keyword)
   end
   
   def index
@@ -41,5 +45,9 @@ class RoomsController < ApplicationController
   
   def room_params #ストロングパラメータ
     params.require(:room).permit(:name, :explanation, :fee, :address, :room_image, :user_id)
+  end
+  
+  def search_for(area, keyword)
+    Room.where('address LIKE ?', "%#{area}%").where('explanation LIKE ? OR name LIKE ?', "%#{keyword}%", "%#{keyword}%")
   end
 end
