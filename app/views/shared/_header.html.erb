@@ -4,7 +4,7 @@
   </div>
   <div class="header-right-nav">
     <% if user_signed_in? %>
-      <div class="nav-item d-sm-inline-block d-none">username</div>
+      <div class="nav-item d-sm-inline-block d-none"><%= current_user.name%></div>
       <div class="nav-item">
         <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="#">                       <!--後でsrcを追加する-->
         <ul class="header-nav-menu">

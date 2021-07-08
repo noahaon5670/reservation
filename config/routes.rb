@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'users/account'
   get 'users/profile'
+  patch 'users/profile', to: 'users#update_profile'
   root 'pages#index'
   # get 'pages/index'
   devise_for :users

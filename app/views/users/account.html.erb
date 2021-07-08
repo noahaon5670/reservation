@@ -1,2 +1,17 @@
-<h1>Users#account</h1>
-<p>Find me in app/views/users/account.html.erb</p>
+<div class="user">
+  <%= render "shared/user-nav-pc"%>
+
+  <h1>Users#account</h1>
+  <p>Find me in app/views/users/account.html.erb</p>
+  
+  <% @users.each do |user| %>
+    <%= user.id %>
+    <%= user.name %>
+    <%= user.email %>
+  <% end %>
+  
+  <%= current_user.id %>
+  
+  <%= link_to "編集", 'edit'%>
+</div>
+
