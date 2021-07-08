@@ -1,0 +1,10 @@
+<% @rooms.each do |room|%>
+  <br/>
+  <%= room.id %>
+  <%= link_to room.name, room %>
+  <%= room.explanation %>
+  <%= room.fee %>
+  <%= room.address %>
+  <img src=  <%= room.room_image %> alt="aaaa">
+  <%= room.user_id %>
+<% end %>

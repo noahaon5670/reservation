@@ -1,0 +1,9 @@
+<% @rooms.each do |room| %>
+  <%= room.id %>
+  <%= room.name %>
+  <%= room.explanation %>
+  <%= room.fee %>
+  <%= room.address %>
+  <img src=  <%= room.room_image %> alt="">
+  <br>
+<% end %>

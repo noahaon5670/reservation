@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   get 'users/account'
   get 'users/profile'
   patch 'users/profile', to: 'users#update_profile'
+  
   root 'pages#index'
-  # get 'pages/index'
+  
   devise_for :users
   
   # devise_for :users, controllers: {
@@ -12,5 +13,8 @@ Rails.application.routes.draw do
   # }
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'rooms/posts'
+  get 'rooms/search'
   resources :rooms
+  
 end
