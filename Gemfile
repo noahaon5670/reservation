@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # self install
 gem 'devise'
+
+gem 'carrierwave'
+gem 'rmagick'
