@@ -5,10 +5,9 @@ class RoomsController < ApplicationController
   end
   
   def search
-    # @rooms = Room.all
-    
     @area = params["area"]
     @keyword = params["keyword"]
+    
     @rooms = search_for(@area, @keyword)
   end
   

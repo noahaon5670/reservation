@@ -1,0 +1,6 @@
+<%= @reserve.start_date %>
+
+<%= form_with model: @reserve, url: reservations_url do|f| %>
+  <%= f.date_field :start_date%>
+  <%= f.submit%>
+<% end %>
