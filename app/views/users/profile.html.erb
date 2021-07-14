@@ -1,8 +1,5 @@
 <div class="user">
-  <%= render "shared/user-nav-pc"%>
-  
-  <h1>Users#profile</h1>
-  <p>Find me in app/views/users/profile.html.erb</p>
+  <%= render "shared/user-nav-pc" %>
   
   <%= form_with model: @user, url: users_profile_path  do |f|%>
     <table>

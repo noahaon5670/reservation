@@ -1,2 +1,26 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="top-main">
+  <div class="container">
+    <div class="row col-lg-6">
+      <div class="form-flame">
+        <div class="form-area">
+          <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
+          
+          <%= render "shared/top/search-form" %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel-area">
+    <h2 class="section-title">おすすめのエリア</h2>
+    <div class="row">
+      <%= render "shared/top/panel-item", area: "東京", fileName: "img_tokyo.jpeg" %>
+      <%= render "shared/top/panel-item", area: "大阪", fileName: "img_osaka.jpeg" %>
+      <%= render "shared/top/panel-item", area: "京都", fileName: "img_kyoto.jpeg" %>
+      <%= render "shared/top/panel-item", area: "札幌", fileName: "img_sapporo.jpeg" %>
+
+    </div>
+  </div>
+</div>

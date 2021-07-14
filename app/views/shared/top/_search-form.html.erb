@@ -1,0 +1,7 @@
+<%= form_with url: rooms_search_path, method: :get do |f|%>
+  
+  <%= f.label :area, "エリア"%>
+  <%= f.text_field :area, :placeholder => "東京", class: "form-control mb-4"%>
+  <%= f.submit class: 'form-control btn-primary mb-4', :value => "探す"%>
+  
+<% end %>

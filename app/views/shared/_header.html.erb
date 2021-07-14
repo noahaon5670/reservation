@@ -1,29 +1,14 @@
 <header class="header">
   <div class="header-left-nav">
-    <%= link_to image_tag("logo.png"), '/'%>
+    <%= link_to image_tag("logo.png", alt: "サイトのロゴ画像"), '/'%>
     
-    <%= render "shared/search-form"%>
-    
+    <%= render "shared/header/search-form"%>
   </div>
   <div class="header-right-nav">
     <% if user_signed_in? %>
-      <div class="nav-item d-sm-inline-block d-none"><%= current_user.name%></div>
-      <div class="nav-item">
-        <!--後でsrcを追加する-->
-        <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src=<%= current_user.icon %>>                       
-        <ul class="header-nav-menu">
-          <li><a href="/rooms/new">ルーム登録</a></li>
-          <li><a href="/reservations">予約済みルーム一覧</a></li>
-          <li><a href="/rooms/posts">登録済みルーム一覧</a></li>
-          <li><a href="/users/account">設定</a></li>
-          <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
-        </ul>
-      </div>
+      <%= render "shared/header/login-menu"%>
     <% else %>
-      <div class="nav-item">
-        <%= link_to "ログイン", '/users/sign_in', class: 'btn btn-primary my-2 mx-3'%>
-        <%= link_to "登録する", '/users/sign_up', class: 'btn btn-secondary'%>
-      </div>
+      <%= render "shared/header/non-login-menu"%>
     <% end %>
   </div>
 </header>

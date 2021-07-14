@@ -1,0 +1,46 @@
+.d-none {
+    display: none!important;
+}
+@media (min-width: 576px){
+  .d-sm-inline-block {
+      display: inline-block!important;
+  }
+}
+
+@media (min-width: 992px){
+  .d-lg-inline-block {
+      display: inline-block!important;
+  }
+}
+
+// container
+
+@media (min-width: 576px){
+  .container {
+      max-width: 540px;
+  }
+}
+
+@media (min-width: 768px){
+  .container {
+      max-width: 720px;
+  }
+}
+
+@media (min-width: 992px){
+  .container {
+      max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px){
+  .container {
+      max-width: 1140px;
+  }
+}
+
+
+
+
+
+

@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
   end
   
   def index
+    @reserves = Reserve.all
   end
   
   def show

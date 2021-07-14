@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   get 'rooms/posts'
   get 'rooms/search'
-  resources :rooms
+  resources :rooms, :only => [:show, :new, :edit, :update, :create, :destroy]
   
   post 'reservations/new', to: 'reservations#confilm'
   resources :reservations, :only => [:index, :show, :create]
