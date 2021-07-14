@@ -5,8 +5,10 @@
   
   <% case field %>
   <% when "email_field" then%>
-    <%= f.email_field :email, :class => "form-control col-10 px-2", placeholder: placeholder, autocomplete: autocomplete %>
+    <%= f.email_field column, :class => "form-control col-10 px-2", placeholder: placeholder, autocomplete: autocomplete %>
   <% when "password_field" then%>
-    <%= f.password_field :password, :class => "form-control col-10 px-2", placeholder: placeholder, autocomplete: autocomplete %>
+    <%= f.password_field column, :class => "form-control col-10 px-2", placeholder: placeholder, autocomplete: autocomplete %>
+  <% when "text_field" then%>
+    <%= f.text_field column, :class => "form-control col-10 px-2", placeholder: placeholder, autocomplete: autocomplete %>
   <% end %>
 </div>

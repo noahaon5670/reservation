@@ -1,0 +1,12 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= render "shared/users/input-form", column: "email", f: f, field: "email_field", required: true,  placeholder: "メールアドレス", autocomplete: "email"%>
+  <%= render "shared/users/input-form", column: "password", f: f, field: "password_field", required: true, placeholder: "パスワード", autocomplete: "パスワード"%>
+  
+  <div class="actions">
+    <%= f.submit "ログイン", :class => "form-control btn-primary my-4 "%>
+  </div>
+  
+<% end %>
+
+<%= link_to "新しいアカウントを作成", new_user_registration_path %>
