@@ -9,4 +9,8 @@
     
   <% when "text_area" then%>
     <%= f.text_area column, :class => "form-control mb-4 col-md-9", placeholder: placeholder %>
+    
+  <% when "number_field" then%>
+    <%= f.number_field column, :class => "form-control mb-4 col-md-9", placeholder: placeholder %>
+
 <% end %>

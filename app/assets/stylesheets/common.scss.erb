@@ -24,10 +24,6 @@ div.field, div.action {
   margin-bottom: 10px;
 }
 
-.d-none {
-  display: none;
-}
-
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -306,6 +302,39 @@ div.field, div.action {
     padding: 20px;
     margin: 0 15px;
     font-size: 16px;
+}
+
+.room-new {
+  width: 100%;
+  
+  .room-nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 15px;
+    
+    li {
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+  
+  .room-nav-pc {
+    height: 100vh;
+    
+    .active {
+      border-right: 3px solid #4a90e2;
+      
+      a {
+        color: #4a90e2;
+      }
+    }
+  }
+  
+  .update-content {
+    label {
+      font-weight: bold;
+    }
+  }
 }
 
 .footer {

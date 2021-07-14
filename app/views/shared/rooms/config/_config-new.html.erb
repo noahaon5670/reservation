@@ -1,0 +1,24 @@
+
+<%= form_with model: @room do |f|%>
+  <%= render "shared/update-content/update-content", type: "title",  title: "ルーム情報登録" %>
+
+  <%= f.hidden_field :user_id, value: current_user.id%>
+  
+  <%= render "shared/update-content/update-content",
+    type: "edit", title: "ルーム名", column: "name", field: "text_field", placeholder: "ルーム名を入力", f: f %>
+    
+  <%= render "shared/update-content/update-content",
+    type: "edit", title: "ルーム紹介", column: "explanation", field: "text_area", placeholder: "ルーム説明を入力", f: f %>
+    
+  <%= render "shared/update-content/update-content",
+    type: "edit", title: "料金", column: "fee", field: "number_field", placeholder: "一日あたりの料金を入力", f: f %>
+    
+  <%= render "shared/update-content/update-content",
+    type: "edit", title: "住所", column: "address", field: "text_field", placeholder: "住所を入力", f: f %>
+    
+  <%= render "shared/update-content/update-content",
+    type: "edit", title: "ルーム画像", column: "room_image", field: "file_field", placeholder: "ルーム画像をアップロード", f: f %>
+    
+  <%= render "shared/update-content/update-content", 
+    type: "submit",  title: "登録", f: f%>
+<% end %>
