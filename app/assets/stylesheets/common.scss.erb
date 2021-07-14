@@ -20,6 +20,10 @@ a {
   color: #000;
 }
 
+div.field, div.action {
+  margin-bottom: 10px;
+}
+
 .d-none {
   display: none;
 }
@@ -60,6 +64,44 @@ a {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.device {
+  padding-top: 36px;
+  font-size: 16px;
+  
+  p {
+    font-size: 16px;
+  }
+  
+  a {
+    color: #007bff !important;
+  }
+  
+  &-flame {
+    max-width: 600px;
+    text-align: center;
+    padding: 24px;
+    margin: 0px auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: rgba(21, 27, 38, 0.15) 0px 1px 3px 0px;
+  }
+  
+  &-inner {
+    width: 360px;
+    margin: 0px auto;
+  }
+}
+
+.required::before {
+  content: "必須";
+  color: #fff;
+  background-color: #ff0000a8;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
 }
 
 .header {
