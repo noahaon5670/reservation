@@ -1,10 +1,28 @@
+<% list = [
+  {
+    url: users_account_path,
+    file_path: "shared/users/config/config-account",
+    title: "アカウント"
+  },
+  {
+    url: users_profile_path,
+    file_path: "shared/users/config/config-profile",
+    title: "プロフィール"
+  }
+] 
+%>
+
 <div class="user">
   <div class="row">
-    <%= render "shared/users/user-nav-pc" %>
+    <%= render "shared/side-bar/side-bar", list: list, name: "user" %>
+
     <div class="col-md-10 user-view">
       <div class="user-view-box">
-        <%= render "shared/users/config/config-account" if current_page?(users_account_path)%>
-        <%= render "shared/users/config/config-profile" if current_page?(users_profile_path)%>
+
+        <% list.each do |li|%>
+          <%= render li[:file_path] if current_page?(li[:url])%>
+        <% end %>
+        
       </div>
     </div>
   </div>

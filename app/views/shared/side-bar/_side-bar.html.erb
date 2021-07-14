@@ -1,0 +1,9 @@
+<div class="col-lg-2 d-lg-block d-none <%= name %>-nav <%= name %>-nav-pc">
+  <ul>
+    <% list.each do |li|%>
+      <li class="<%= "active" if current_page?(li[:url])%>">
+        <%= link_to li[:title], li[:url] %>
+      </li>
+    <% end %>
+  </ul>
+</div>
