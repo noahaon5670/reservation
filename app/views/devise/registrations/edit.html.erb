@@ -1,7 +1,38 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container device">
+  <div class="device-flame">
+    <h2 class="mb-3">アカウント編集</h2>
+    <div class="device-inner">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "shared/users/edit/edit-form",
+          column: "email", label: "メールアドレス", field: "email_field",
+          placeholder: "メールアドレスを入力してください", autofocus: true, autocomplete: "email", f: f%>
+          
+        <%= render "shared/users/edit/edit-form",
+          column: "password", label: "変更後パスワード（変更する場合のみ入力）", field: "password_field",
+          placeholder: "", autofocus: false, autocomplete: "new-password", f: f%>
+        
+        <%= render "shared/users/edit/edit-form",
+          column: "password_confirmation", label: "パスワード確認用（変更する場合のみ入力）", field: "password_field",
+          placeholder: "", autofocus: false, autocomplete: "new-password", f: f%>      
+      
+        <%= render "shared/users/edit/edit-form",
+          column: "current_password", label: "現在のパスワード", field: "password_field",
+          placeholder: "現在のパスワードを入力", autofocus: false, autocomplete: "current-password", f: f%>
+          
+        <div class="actions">
+          <%= f.submit "更新", :class => "form-control btn-primary my-4"%>
+        </div>  
+        
+        <div class="actions">
+          <%= link_to "戻る", :back , :class => "btn btn-outline-secondary form-control"%>
+        </div> 
 
-<%= @user.id %>
-<%= current_user %>
+        
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,11 +54,20 @@
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
+  
+  
+  
+  
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+
+
+
+
+
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
