@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def account
-    @users = User.all
+    @user = User.find(current_user.id)
   end
 
   def profile

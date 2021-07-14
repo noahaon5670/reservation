@@ -1,0 +1,22 @@
+<div class="user">
+  <div class="row">
+    <%= render "shared/users/user-nav-pc" %>
+    <div class="col-md-10 user-view">
+      <div class="user-view-box">
+        <%= render "shared/users/config/config-account" if current_page?(users_account_path)%>
+        <%= render "shared/users/config/config-profile" if current_page?(users_profile_path)%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

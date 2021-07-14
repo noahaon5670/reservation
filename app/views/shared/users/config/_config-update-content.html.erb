@@ -1,0 +1,46 @@
+<div class="update-content">
+  <div class="row">
+    
+    <% case type %>
+      <% when "title" then%>
+        <h5><%= title %></h5>
+        
+      <% when "show" then %>
+        <label for="email" class="col-md-3"><%= title %></label>
+        <div class="col-md-9">
+          <% if column == "password"%>
+            *********
+          <% else %>
+            <%= @user[column] %>
+          <% end %>
+        </div>
+        
+      <% when "link" then %>
+        <%= link_to title, url, :class => "col-md-2 btn btn-primary mx-3"%>
+        
+      <% when "icon" then %>
+        <div class="col-md-6 offset-md-3">
+          <div class="icon-box">
+            <img alt="アイコン画像" class="icon-image host-icon" src=<%= current_user.icon %>>
+          </div>
+        </div>
+        
+      <% when "edit" then %>
+        <%= f.label column, title, :class => "col-md-3 required-a" %>
+        <% case field %>
+          <% when "file_field" then%>
+            <%= f.file_field column, :class => "mb-4 col-md-9", placeholder: placeholder %>
+            
+          <% when "text_field" then%>
+            <%= f.text_field column, :class => "form-control mb-4 col-md-9", placeholder: placeholder %>
+            
+          <% when "text_area" then%>
+            <%= f.text_area column, :class => "form-control mb-4 col-md-9", placeholder: placeholder %>
+        <% end %>
+        
+      <% when "submit" then %>
+        <%= f.submit title, :class => "col-md-2 btn btn-primary mx-3" %>
+    <% end %>
+
+  </div>
+</div>

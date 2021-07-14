@@ -1,14 +1,1 @@
-<div class="user">
-  <%= render "shared/user-nav-pc" %>
-  
-  <% @users.each do |user| %>
-    <%= user.id %>
-    <%= user.name %>
-    <%= user.email %>
-  <% end %>
-  
-  <%= current_user.id %>
-  
-  <%= link_to "編集", 'edit'%>
-</div>
-
+<%= render "shared/users/config/config"%>
