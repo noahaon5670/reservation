@@ -13,6 +13,8 @@ class RoomsController < ApplicationController
   
   def show
     @room = Room.find(params[:id])
+    @post_user = User.find(@room.user_id)
+    @reserve_user = current_user
   end
   
   def new

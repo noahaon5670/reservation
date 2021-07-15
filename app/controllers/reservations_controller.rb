@@ -1,10 +1,7 @@
 class ReservationsController < ApplicationController
-  def confilm
-    puts "hoge"
-    
-    @reserve = Reserve.new(params.permit(:id, :start_date))
+  def confilm    
+    @reserve = Reserve.new(reserve_params_no_require)
     if @reserve.invalid?
-      render room_path 
     else
     end
   end
@@ -18,7 +15,7 @@ class ReservationsController < ApplicationController
   end
   
   def create
-    @reserve = Reserve.new(reserve_params)
+    @reserve = Reserve.new(reserve_params_require)
     if @reserve.save
       puts "hoge"
       redirect_to reservation_path(@reserve)
@@ -29,7 +26,11 @@ class ReservationsController < ApplicationController
   
   private
   
-  def reserve_params
-    params.require(:reserve).permit(:id, :room_name, :start_date, :end_date, :fee, :room_id, :post_user_id, :reserve_user_id)
+  def reserve_params_no_require
+    params.permit(:id, :room_name, :start_date, :end_date, :fee, :person_num, :room_id, :post_user_id, :reserve_user_id)
+  end
+  
+  def reserve_params_require
+    params.require(:reserve).permit(:id, :room_name, :start_date, :end_date, :fee, :person_num, :room_id, :post_user_id, :reserve_user_id)
   end
 end

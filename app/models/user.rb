@@ -6,5 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   mount_uploader :icon, IconUploader
+  
+  has_many :rooms
+  has_many :reserves
 
 end
