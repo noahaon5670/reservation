@@ -1,4 +1,3 @@
-
 <%= form_with model: @room do |f|%>
   <%= render "shared/update-content/update-content", type: "title",  title: "ルーム情報登録" %>
 
@@ -20,5 +19,5 @@
     type: "edit", title: "ルーム画像", column: "room_image", field: "file_field", placeholder: "ルーム画像をアップロード", f: f %>
     
   <%= render "shared/update-content/update-content", 
-    type: "submit",  title: "登録", f: f%>
+    type: "submit",  title: message, f: f%>
 <% end %>

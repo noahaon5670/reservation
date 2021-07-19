@@ -285,6 +285,57 @@ div.field, div.action {
   } 
 }
 
+.room {
+  width: 100%;
+  padding: 30px 60px;
+  
+  &-image {
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    top: 20px;
+    object-fit: cover;
+    
+    &-out {
+      position: relative;
+      width: 100%;
+      background: #F6F8F9;
+      height: 200px;
+    }
+  } 
+  
+  &-flame-inner {
+    border: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+  }
+  
+  &-profile {
+    width: 100%;
+    padding: 15px;
+    
+    p {
+      word-break: break-all;
+    }
+    
+    &-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #909090;
+    }
+    
+    &-city {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    &-price {
+      text-align: right;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
 .room-new .room-view {
     background-color: #F6F8F9;
     border-left: 2px solid #e2e2e2;

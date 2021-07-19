@@ -1,36 +1,9 @@
-<div class="room_view">
-  <div class="room-view-box">
-    <%= form_with model: @room do |f|%>
-      <div class="update-content">
-        <div class="row">
-          <h5>ルーム情報登録</h5>
-        </div>
+<div class="room-new">
+  <div class="row">
+    <div class="col-lg-12 room-view">
+      <div class="room-view-box">
+        <%= render "shared/rooms/config/config", message: "編集" %>
       </div>
-      
-      <%= f.hidden_field :user_id, value: current_user.id%>
-      
-      <div class="update-content">
-        <%= f.label :name, 'ルーム名'%>
-        <%= f.text_field :name%>
-      </div>
-      <div class="update-content">
-        <%= f.label :explanation, 'ルーム紹介'%>
-        <%= f.text_area :explanation%>
-      </div>
-      <div class="update-content">
-        <%= f.label :fee, '料金'%>
-        <%= f.number_field :fee%>
-      </div>
-      <div class="update-content">
-        <%= f.label :address, '住所'%>
-        <%= f.text_field :address%>
-      </div>
-      <div class="update-content">
-        <%= f.label :room_image, 'ルーム画像'%>
-        <%= f.file_field :room_image %>
-      </div>
-      <%= f.submit "登録"%>
-      <%= link_to "削除", @room, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-    <% end %>
+    </div>
   </div>
 </div>
