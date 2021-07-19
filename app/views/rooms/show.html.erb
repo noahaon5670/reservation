@@ -1,25 +1,6 @@
 <div class="room-show container">
   <div class="row">
-    <div class="col-md-8">
-      <img class="room-show-image" src="<%= @room.room_image %>" alt="部屋画像">
-      <div class="room-show-detail">
-        <div class="room-show-detail-icon">
-          <img class="host-icon" src="<%= @post_user.icon %>" alt="投稿者アイコン">
-        </div>
-        <div class="room-show-profle">
-          <p class="room-show-profile-name"><%= @room.name %></p>
-          <p class="room-showw-profile-address"><%= @room.address %></p>
-        </div>
-      </div>
-      <p class="room-show-detail-content"><%= @room.explanation %></p>
-    </div>
-    <div class="col-md-4">
-      <div class="room-show-nav">
-        <h5 class="price-icon"><%= @room.fee %> / 日</h5>
-        <div class="room-show-date-select">
-          <%= render "shared/rooms/reserve/form" %>
-        </div>
-      </div>
-    </div>
+    <%= render "shared/rooms/show/show-room-info"%>
+    <%= render "shared/rooms/show/show-reserve-form"%>
   </div>
 </div>
