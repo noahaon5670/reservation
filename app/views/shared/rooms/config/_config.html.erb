@@ -1,3 +1,10 @@
+<% case mode %>
+  <% when "new" %>
+    <% message="登録" %>
+  <% when "edit" %>
+    <% message="編集" %>
+<% end %>
+
 <%= form_with model: @room do |f|%>
   <%= render "shared/update-content/update-content", type: "title",  title: "ルーム情報登録" %>
 
@@ -20,4 +27,10 @@
     
   <%= render "shared/update-content/update-content", 
     type: "submit",  title: message, f: f%>
+    
+  <% if mode == "edit"%>
+    <%= render "shared/update-content/update-content", 
+      type: "delete",  model:@room, f: f%>
+  <% end %>  
+    
 <% end %>

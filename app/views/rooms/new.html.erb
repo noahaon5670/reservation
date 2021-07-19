@@ -3,8 +3,11 @@
     <%= render "shared/rooms/config/rooms-side-bar" %>
     <div class="col-lg-10 room-view">
       <div class="room-view-box">
-        <%= render "shared/rooms/config/config", :message "登録" %>
+        <%= render "shared/rooms/config/config", mode: "new" %>
       </div>
     </div>
   </div>
 </div>
+
+
+<%= link_to "削除", @room, method: :delete, data: { confirm: "本当に削除しますか？" } %>

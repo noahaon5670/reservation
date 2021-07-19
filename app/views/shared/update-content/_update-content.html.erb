@@ -19,6 +19,10 @@
                 
       <% when "submit" then %>
         <%= render "shared/update-content/submit",title: title, f: f %>
+        
+      <% when "delete" then %>
+        <%= render "shared/update-content/delete", model: model, f: f %>
+        
     <% end %>
 
   </div>
