@@ -6,7 +6,7 @@
         <%= render "shared/update-content/title", title: title %>
         
       <% when "show" then %>
-        <%= render "shared/update-content/show", title: title, column: column %>
+        <%= render "shared/update-content/show", title: title, column: column, model: model %>
         
       <% when "link" then %>
         <%= render "shared/update-content/link", title: title, url: url %>
