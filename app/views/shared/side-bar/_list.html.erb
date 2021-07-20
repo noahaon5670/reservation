@@ -1,0 +1,7 @@
+<ul>
+  <% list.each do |li|%>
+    <li class="<%= "active" if current_page?(li[:url])%>">
+      <%= link_to li[:title], li[:url] %>
+    </li>
+  <% end %>
+</ul>

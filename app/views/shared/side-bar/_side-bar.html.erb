@@ -1,9 +1,7 @@
 <div class="col-lg-2 d-lg-block d-none <%= name %>-nav <%= name %>-nav-pc">
-  <ul>
-    <% list.each do |li|%>
-      <li class="<%= "active" if current_page?(li[:url])%>">
-        <%= link_to li[:title], li[:url] %>
-      </li>
-    <% end %>
-  </ul>
+  <%= render "shared/side-bar/list", list: list, name: name %>
+</div>
+
+<div class="col-lg-2 d-lg-block d-lg-none <%= name %>-nav <%= name %>-nav-mobile">
+  <%= render "shared/side-bar/list", list: list, name: name %>
 </div>
