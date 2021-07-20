@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   resources :rooms, :only => [:show, :new, :edit, :update, :create, :destroy]
   
   post 'reservations/new', to: 'reservations#confilm'
-  resources :reservations, :only => [:index, :show, :create]
+  resources :reservations, :only => [:index, :show, :create, :destroy]
   
 end

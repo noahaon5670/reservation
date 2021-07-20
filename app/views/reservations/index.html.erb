@@ -9,11 +9,22 @@
   created_at: "作成日",
 } %>
 
+<%# params = {
+  room_image: "ルーム画像",
+  name: "ルーム名",
+  # explanation: "ルーム紹介", 
+  # fee: "合計金額",
+  # start_date: "開始日", 
+  # end_date: "終了日",
+  # created_at: "予約確定日時",
+} %>
+
 <div class="room-posts">
   <h4 class="pb-4">予約済みルーム一覧</h4>
   <table>
     <thead>
       <%= render "shared/list/rooms-list/thead", params: params, isEdit: false%>
+      
     </thead>
     <tbody>
       <% @reserves.each do |reserve|%>
@@ -27,5 +38,15 @@
 <% @reserves.each do |reserve|%>
   <%= reserve.id %>
   <%= reserve.start_date %>
+  <%= reserve.end_date %>
+  <%= reserve.fee %>
+  <%= reserve.room_id %>
+  <%= reserve.post_user_id %>
+  <%= reserve.reserve_user_id %>
+  <%= reserve.created_at %>
+
+  <%= reserve.room.name %>
+
+
   <br>
 <% end %>

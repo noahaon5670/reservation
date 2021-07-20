@@ -1,0 +1,6 @@
+<% case type%>
+  <% when "submit" %>
+    <%= f.submit "予約を確定", class: "btn btn-primary form-control my-3"%>
+  <% when "return" %>
+    <%= link_to "ルーム詳細に戻る", :back, class: "btn btn-secondary form-control" %>
+<% end %>

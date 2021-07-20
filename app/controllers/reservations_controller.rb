@@ -1,9 +1,15 @@
 class ReservationsController < ApplicationController
   def confilm    
     @reserve = Reserve.new(reserve_params_no_require)
+    @room = Room.find(params[:room_id])
+    
+    
     if @reserve.invalid?
     else
     end
+    
+    
+    
   end
   
   def index
@@ -22,6 +28,12 @@ class ReservationsController < ApplicationController
     else
       puts "fuga"
     end
+  end
+  
+  def destroy
+    @reserve = Reserve.find(params[:id])
+    @reserve.destroy
+    redirect_to "/"
   end
   
   private

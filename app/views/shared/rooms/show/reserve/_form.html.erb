@@ -8,6 +8,7 @@
   <%= f.label :person_num, "人数"%>
   <%= f.number_field :person_num, class: "form-control mb-4"%>
   
+  <%= f.hidden_field :room_name, value: @room.name%>
   <%= f.hidden_field :room_id, value: @room.id%>
   <%= f.hidden_field :post_user_id, value: @post_user.id%>
   <%= f.hidden_field :reserve_user_id, value: @reserve_user.id%>
