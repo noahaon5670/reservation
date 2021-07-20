@@ -1,6 +1,6 @@
 <tr>
   <% params.each do |param|%>
-    <%= render "shared/list/rooms-list/content", model: model, param: param[0]%>
+    <%= render "shared/list/rooms-list/content", model: model, param: param[0], relation: relation%>
   <% end %>
   
   <% if isEdit %>

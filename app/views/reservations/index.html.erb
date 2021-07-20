@@ -1,22 +1,11 @@
 <% params = {
-  room_name: "ルーム名",
-  start_date: "開始日", 
-  end_date: "終了日",
-  fee: "料金",
-  room_id: "roomID",
-  post_user_id: "ホストID",
-  reserve_user_id: "利用者ID",
-  created_at: "作成日",
-} %>
-
-<%# params = {
-  room_image: "ルーム画像",
-  name: "ルーム名",
-  # explanation: "ルーム紹介", 
-  # fee: "合計金額",
-  # start_date: "開始日", 
-  # end_date: "終了日",
-  # created_at: "予約確定日時",
+  "room_image" => "ルーム画像",
+  "name" =>  "ルーム名",
+  "explanation" => "ルーム紹介", 
+  "fee" => "合計金額",
+  "start_date" => "開始日", 
+  "end_date" => "終了日",
+  "created_at" => "予約確定日時",
 } %>
 
 <div class="room-posts">
@@ -24,29 +13,34 @@
   <table>
     <thead>
       <%= render "shared/list/rooms-list/thead", params: params, isEdit: false%>
-      
     </thead>
     <tbody>
-      <% @reserves.each do |reserve|%>
-        <%= render "shared/list/rooms-list/tbody", params: params, model: reserve, isEdit: false%>
+      <% @reserves.each do |reservation|%>
+        <tr>
+          <td>
+            <% link = "#{reservation.room.room_image}"%>
+            <%= link_to image_tag(link, class: "room-posts-image"), reservation_path(reservation) %>
+          </td>
+          <td class="posts-name">
+            <%= link_to reservation.room.name, reservation_path(reservation) %>
+          </td>
+          <td>
+            <%= reservation.room.explanation %>
+          </td>
+          <td class="price-icon">
+            <%= reservation.fee %>
+          </td>
+          <td>
+            <%= reservation.start_date %>
+          </td>
+          <td>
+            <%= reservation.end_date %>
+          </td>
+          <td>
+            <%= reservation.created_at%>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-
-<% @reserves.each do |reserve|%>
-  <%= reserve.id %>
-  <%= reserve.start_date %>
-  <%= reserve.end_date %>
-  <%= reserve.fee %>
-  <%= reserve.room_id %>
-  <%= reserve.post_user_id %>
-  <%= reserve.reserve_user_id %>
-  <%= reserve.created_at %>
-
-  <%= reserve.room.name %>
-
-
-  <br>
-<% end %>

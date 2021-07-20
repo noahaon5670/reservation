@@ -1,33 +1,24 @@
 <% case param %>
-  <% when :room_image then %>
-    <% if model == "reserve" %>
-      <% 
-        reration_param = "room." + param
-        link = "/uploads/room/room_image/#{model.id}/#{model[reration_param]}"
-      %>
-    <% else %>
-      <% link = "/uploads/room/room_image/#{model.id}/#{model[param]}"%>
-    <% end %>
-    <td>
-      <%= link_to image_tag(link, class: "room-posts-image"), model %>
-    </td>
+  <% when "room_image" then %>
+    <% link = "/uploads/room/room_image/#{model.id}/#{model[param]}"%>
+    <td><%= link_to image_tag(link, class: "room-posts-image"), model %></td>
     
-  <% when :name then %>
+  <% when "name" then %>
     <td class="posts-name">
       <%= link_to model[param], model %>
     </td>
     
-  <% when :explanation then %>
+  <% when "explanation" then %>
     <td class="posts-content">
       <%= model[param] %>
     </td>
     
-  <% when :fee then %>
+  <% when "fee" then %>
     <td class="price-icon">
       <%= model[param] %>
     </td>
     
-  <% when :created_at then %>
+  <% when "created_at" then %>
     <td>
       <%= model[param] %>
     </td>

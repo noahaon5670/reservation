@@ -1,9 +1,9 @@
 <% params = {
-    room_image: "ルーム画像",
-    name: "ルーム名",
-    explanation: "ルーム紹介",
-    fee: "料金",
-    created_at: "作成日",
+    "room_image" => "ルーム画像",
+    "name" => "ルーム名",
+    "explanation" => "ルーム紹介",
+    "fee" => "料金",
+    "created_at" => "作成日",
 } %>
 
 <div class="room-posts">
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
       <% @rooms.each do |room|%>
-        <%= render "shared/list/rooms-list/tbody", params: params, model: room, isEdit: true%>
+        <%= render "shared/list/rooms-list/tbody", params: params, model: room, relation: "", isEdit: true%>
       <% end %>
     </tbody>
   </table>
