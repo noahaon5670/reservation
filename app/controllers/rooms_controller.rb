@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   
+  before_action :set_room, only[:show, :edit, :update, :destroy]
+  
   def posts
     @rooms = Room.where(user_id: current_user.id)
   end
@@ -12,7 +14,6 @@ class RoomsController < ApplicationController
   end
   
   def show
-    @room = Room.find(params[:id])
     @post_user = User.find(@room.user_id)
     @reserve_user = current_user
   end
@@ -22,7 +23,6 @@ class RoomsController < ApplicationController
   end
   
   def edit
-    @room = Room.find(params[:id])
   end
   
   def create
@@ -35,15 +35,14 @@ class RoomsController < ApplicationController
   end
   
   def update
-    @room = Room.find(params[:id])
     if @room.update(room_params)
       redirect_to rooms_posts_path
     else
+      
     end
   end
   
   def destroy
-    @room = Room.find(params[:id])
     @room.destroy
     redirect_to rooms_posts_path
   end
@@ -56,5 +55,9 @@ class RoomsController < ApplicationController
   
   def search_for(area, keyword)
     Room.where('address LIKE ?', "%#{area}%").where('explanation LIKE ? OR name LIKE ?', "%#{keyword}%", "%#{keyword}%")
+  end
+  
+  def set_room
+    @room = Room.find(params[:id])
   end
 end
