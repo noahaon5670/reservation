@@ -1,13 +1,13 @@
 class ReservationsController < ApplicationController
   before_action :set_reserve, only: [:show, :destroy]
   
-  def confilm    
-    @reserve = Reserve.new(reserve_params_no_require)
-    @room = Room.find(params[:room_id])  
-  end
-  
   def index
     @reserves = Reserve.where(reserve_user_id: current_user.id)
+  end
+  
+  def new
+    @reserve = Reserve.new(reserve_params_no_require)
+    @room = Room.find(params[:room_id])
   end
   
   def show
