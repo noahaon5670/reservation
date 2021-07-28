@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   
-  before_action :set_room, only[:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
   
   def posts
     @rooms = Room.where(user_id: current_user.id)
@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
     if @room.update(room_params)
       redirect_to rooms_posts_path
     else
-      
+      render "edit"
     end
   end
   
