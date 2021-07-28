@@ -1,0 +1,31 @@
+<% date_diff = (@reserve.end_date - @reserve.start_date).to_i %>
+<% price_per_day = @room.fee * @reserve.person_num %>
+<% @reserve.fee = date_diff * price_per_day %>
+
+<div class="reservations-new-nav">
+  <h4 class="reservations-new-check-content">予約内容確認</h4>
+  <h5 class="price-icon"><%= price_per_day %> / 日</h5>
+  <div class="reservations-new-date-select">
+    <%= form_with model: @reserve, url: reservations_url, class: "new-reservation" do|f|%>
+      <%= f.hidden_field :room_id%>
+      <%= f.hidden_field :post_user_id%>
+      <%= f.hidden_field :reserve_user_id%>
+      
+      <%= render "shared/reserve/new/form-control", title: "開始日", params: "start_date", f: f%>
+      
+      <%= render "shared/reserve/new/form-control", title: "終了日", params: "end_date", f: f%>
+      
+      <%= render "shared/reserve/new/check-content", title: "使用日数", data: date_diff, unit: "日", element: "h6"%>
+      
+      <%= render "shared/reserve/new/check-content", title: "人数", data: @reserve.person_num, unit: "人", element: "h6"%>
+      
+      <%= render "shared/reserve/new/form-control", title: "合計金額", params: "fee", f: f%>
+      
+      <%= render "shared/reserve/new/check-content", title: "上記内容でよろしければ「予約を確定」を押してください", data: "", unit: "", element: "p"%>
+
+      <%= render "shared/reserve/new/button", type: "submit", f: f%>
+      
+      <%= render "shared/reserve/new/button", type: "return", f: f%>  
+    <% end %>
+  </div>
+</div>

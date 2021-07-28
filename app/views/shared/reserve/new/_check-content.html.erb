@@ -1,0 +1,16 @@
+<% class_name = "reservations-new-check-content"%>
+
+<%
+  if data.present? && unit.present? then
+    content = "#{title} : #{data} #{unit}"
+  else
+    content = title
+  end
+%>
+
+<% case element %>
+  <% when "h6"%>
+    <h6 class=<%= class_name %>><%= content %></h6>
+  <% when "p"%>
+    <p class=<%= class_name%>><%= content %></p>
+<% end %>
