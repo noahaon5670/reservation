@@ -1,3 +1,6 @@
+<%= render "shared/error", obj: @room %>
+
+
 <%= form_with model: @reserve, method: :post, url: reservations_new_path, local: true do |f|%>
   <%= f.label :start_date, "開始日"%>
   <%= f.date_field :start_date, class: "form-control mb-4"%>
