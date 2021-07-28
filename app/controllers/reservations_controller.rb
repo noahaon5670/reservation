@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   end
   
   def index
-    @reserves = Reserve.all
+    @reserves = Reserve.where(reserve_user_id: current_user.id)
   end
   
   def show
