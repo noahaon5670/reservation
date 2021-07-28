@@ -5,6 +5,8 @@
     <% message="編集" %>
 <% end %>
 
+<%= render "shared/error", obj: @room %>
+
 <%= form_with model: @room do |f|%>
   <%= render "shared/update-content/update-content", type: "title",  title: "ルーム情報登録" %>
 

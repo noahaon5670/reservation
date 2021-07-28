@@ -60,3 +60,5 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'rails-i18n'
