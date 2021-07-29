@@ -1,0 +1,11 @@
+<tr align="center">
+  
+  <% params.each do |param|%>
+    <th><%= param[1] %></th>
+  <% end %>
+  
+  <% if isEdit %>
+    <th>編集</th>
+  <% end %>
+  
+</tr>

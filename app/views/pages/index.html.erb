@@ -1,0 +1,43 @@
+<%
+  list = [
+    { 
+      "area" => "東京",
+      "fileName" => "img_tokyo.jpeg"
+    },
+    { 
+      "area" => "大阪",
+      "fileName" => "img_osaka.jpeg"
+    },
+    { 
+      "area" => "京都",
+      "fileName" => "img_kyoto.jpeg"
+    },
+    { 
+      "area" => "札幌",
+      "fileName" => "img_sapporo.jpeg"
+    },
+  ]
+%>
+
+<div class="top-main">
+  <div class="container">
+    <div class="row col-lg-6">
+      <div class="form-flame">
+        <div class="form-area">
+          <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
+          <%= render "shared/top/search-form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel-area">
+    <h2 class="section-title">おすすめのエリア</h2>
+    <div class="row">
+      <% list.each do |li|%>
+        <%= render "shared/top/panel-item", area: li["area"], fileName: li["fileName"] %>
+      <% end %>
+    </div>
+  </div>
+</div>

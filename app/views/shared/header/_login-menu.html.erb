@@ -1,0 +1,6 @@
+<div class="nav-item d-sm-inline-block d-none"><%= current_user.name%></div>
+<div class="nav-item" onclick="showNav()">
+  <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src=<%= current_user.icon %>>  
+  
+  <%= render "shared/header/header-nav-menu" %>                     
+</div>
