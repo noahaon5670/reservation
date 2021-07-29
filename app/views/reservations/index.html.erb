@@ -1,0 +1,46 @@
+<% params = {
+  "room_image" => "ルーム画像",
+  "name" =>  "ルーム名",
+  "explanation" => "ルーム紹介", 
+  "fee" => "合計金額",
+  "start_date" => "開始日", 
+  "end_date" => "終了日",
+  "created_at" => "予約確定日時",
+} %>
+
+<div class="room-posts">
+  <h4 class="pb-4">予約済みルーム一覧</h4>
+  <table>
+    <thead>
+      <%= render "shared/list/rooms-list/thead", params: params, isEdit: false%>
+    </thead>
+    <tbody>
+      <% @reserves.each do |reservation|%>
+        <tr>
+          <td>
+            <% link = "#{reservation.room.room_image}"%>
+            <%= link_to image_tag(link, class: "room-posts-image"), reservation_path(reservation) %>
+          </td>
+          <td class="posts-name">
+            <%= link_to reservation.room.name, reservation_path(reservation) %>
+          </td>
+          <td>
+            <%= reservation.room.explanation %>
+          </td>
+          <td class="price-icon">
+            <%= reservation.fee %>
+          </td>
+          <td>
+            <%= reservation.start_date %>
+          </td>
+          <td>
+            <%= reservation.end_date %>
+          </td>
+          <td>
+            <%= reservation.created_at%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
